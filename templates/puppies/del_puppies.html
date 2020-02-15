@@ -1,0 +1,13 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}{{ title }} Puppies{% endblock %}
+
+{% include "puppies/menu.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Are you sure delete this puppies?</h1>
+    {{ wtf.quick_form(form) }}
+    <a href={{ url_for('list_puppies') }}>Back</a>
+</div>
+{% endblock %}
